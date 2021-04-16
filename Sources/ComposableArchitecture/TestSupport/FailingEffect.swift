@@ -1,6 +1,7 @@
 #if DEBUG
   import XCTestDynamicOverlay
 
+  @available(iOS 13.0, *)
   extension Effect {
     /// An effect that causes a test to fail if it runs.
     ///

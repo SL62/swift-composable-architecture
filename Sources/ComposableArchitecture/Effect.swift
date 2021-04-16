@@ -12,6 +12,7 @@ import Foundation
 ///
 /// An effect simply wraps a `Publisher` value and provides some convenience initializers for
 /// constructing some common types of effects.
+@available(iOS 13.0, *)
 public struct Effect<Output, Failure: Error>: Publisher {
   public let upstream: AnyPublisher<Output, Failure>
 
@@ -263,6 +264,7 @@ public struct Effect<Output, Failure: Error>: Publisher {
   }
 }
 
+@available(iOS 13.0, *)
 extension Effect where Failure == Swift.Error {
   /// Initializes an effect that lazily executes some work in the real world and synchronously sends
   /// that data back into the store.
@@ -288,6 +290,7 @@ extension Effect where Failure == Swift.Error {
   }
 }
 
+@available(iOS 13.0, *)
 extension Publisher {
   /// Turns any publisher into an `Effect`.
   ///
